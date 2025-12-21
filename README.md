@@ -159,4 +159,77 @@ Structural hazards occur when the hardware cannot support all possible combinati
 <img width="1390" height="362" alt="Image" src="https://github.com/user-attachments/assets/3642e63e-d398-4208-a8ca-85fc0b7aee4e" />
 
 
+## Data Hazards
+Data hazards occur due to data dependencies between instructions that are in various stages of execution in the pipeline. 
+### ALU-ALU Data Dependency
+
+<img width="1390" height="362" alt="Image" src="https://github.com/user-attachments/assets/eebd3fb8-9ee1-4524-818e-fc55b170c31c" />
+
+* A **naive solution** to ALU-ALU data dependency is inserting stall cycles. After the instruction is decoded and the control unit determines that there is a data dependency, it can insert stall cycles and re-execute the ID stage again.
+* **3 clock cycles are wasted**.
+
+
+
+#### Reducing the Number of Stall Cycles
+
+Two methods can be employed to minimize performance loss:
+
+* **Data Forwarding:** By using additional hardware, the data required can be forwarded to the dependent instruction as soon as it is computed, rather than waiting for it to be written back to the register file.
+<img width="1614" height="398" alt="Image" src="https://github.com/user-attachments/assets/5516036b-8578-4b9c-a012-ee0b24dbdd83" />
+    - The first instruction computes r4, which is required by all the subsequent four instructions.
+    - The dependencies are depicted by red arrows ( Result written in WB, operands read in ID. )
+    - The last instruction, OR, is not affected by data dependency.
+      
+* **Concurrent Register Access:** By splitting the clock cycle into two halves. Register read and write operations can be carried out in separate halves of a clock cycle (e.g., **write** in the first half and **read** in the second half).
+
+<img width="1632" height="726" alt="Image" src="https://github.com/user-attachments/assets/7d355c63-0f76-449b-9de9-c55878c85ed3" />
+
+### Data Hazard while Accessing Memory. 
+A load instruction followed by the use of the loaded data is an example of a data hazard that requires unavoidable pipeline stalls. 
+
+<img width="1503" height="530" alt="Image" src="https://github.com/user-attachments/assets/a26cd73b-6ced-4a81-b84a-557022190fff" />
+
+
+#### Solution ?
+* The hazard cannot be eliminated by forwarding alone.
+* Common solution is to use a hardware addition called **pipeline interlock. **
+* Another software solution is **Instruction Scheduling**, where the compiler tries to avoid generating code with a load followed by an immediate use. 
+
+## Control Hazard.
+
+Control hazards arise because of branch instructions being executed in the pipeline. 
+
+### What happens when a branch is executed? 
+
+* If the branch is taken, the PC is not normally updated until the end of the MEM stage.
+* Instruction can thus be fetched after **3 stall cycles.**
+<img width="1594" height="521" alt="Image" src="https://github.com/user-attachments/assets/d8a75a56-c9b1-4039-a93d-af267a484e32" />
+* **Ideal CPI** = 1
+* **Branch Frequency** = 30%
+* **Stall Cycles** = 3
+
+The **Actual CPI** is calculated by weighting the CPI of non-branch instructions (0.7 probability) and branch instructions (0.3 probability, with penalty).
+
+$$
+\text{Actual CPI} = (0.7 \times 1) + (0.3 \times 4)
+$$
+
+$$
+\text{Actual CPI} = 0.7 + 1.2 = 1.9
+$$
+
+### Reducing Branch Penalties
+
+To mitigate the high performance cost of branch hazards (which normally incur 3 stall cycles), the pipeline structure is modified to resolve branch decisions earlier.
+
+**1. Standard MIPS32 Solution (Early Resolution)**
+In the standard MIPS32 architecture, additional hardware is added to the **ID (Instruction Decode)** stage to calculate the branch target address and evaluate the branch condition.
+* By the end of the ID stage, the processor knows whether the branch is taken and where to jump.
+* **Result:** This reduces the penalty to just **1 stall cycle**.
+
+**2. Proposed Optimization (Zero Stalls)**
+This implementation further eliminates the remaining stall cycle by utilizing **Negative Edge Triggering**.
+* **Mechanism:** Instruction Decode (ID) is performed on the **negative clock edge**.
+* **Result:** Since the branch decision is resolved halfway through the cycle, the Program Counter (PC) can be updated in time for the next Instruction Fetch (IF) on the following positive edge.
+* **Impact:** This results in **Zero Stall Cycles** for branch instructions.
 
