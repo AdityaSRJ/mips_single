@@ -156,8 +156,7 @@ Structural hazards occur when the hardware cannot support all possible combinati
 * **IF - MEM Conflicts:** Both stages attempt to access memory simultaneously (Instruction Fetching in **IF** vs. Data Access in **MEM**).
 * **ID - WB Conflicts:** Both stages attempt to access the Register File simultaneously (Reading operands in **ID** vs. Writing results in **WB**).
 
-
-
+<img width="1390" height="362" alt="Image" src="https://github.com/user-attachments/assets/3642e63e-d398-4208-a8ca-85fc0b7aee4e" />
 
 
 
