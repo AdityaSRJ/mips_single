@@ -43,41 +43,16 @@ IF/ID.NPC, PC \leftarrow
 $$
 
 ### ID Stage:
-* $A    \leftarrow Reg[rs]$
-* $B    \leftarrow Reg[rt]$
-* $Imm \\leftarrow \\{16\\{IR[15]\\} , IR[15:0]\\}$
-* $Imm1 \\leftarrow \\{6\\{IR[25]\\} , IR[25:0]\\}$
+$$ID/EX.A \leftarrow Reg[IF/ID.IR[rs]]$$$$ID/EX.B \leftarrow Reg[IF/ID.IR[rt]]$$$$ID/EX.NPC \leftarrow IF/ID.NPC$$$$ID/EX.IR \leftarrow IF/ID.IR$$$$ID/EX.Imm \leftarrow \text{sign-extend}(IF/ID.IR_{15..0})$$
 
 ### EX Stage:
-* Memory Reference        : $ALUOut \leftarrow A + Imm;$
-
-* Reg-Reg ALU Instruction : $ALUOut \leftarrow A \text{ func } B;$
-
-* Reg-Imm ALU Instruction : $ALUOut \leftarrow A \text{ func } Imm;$
-
-* Branch                  : $ALUOut \leftarrow NPC + Imm;$
-                          : $cond \leftarrow (A \text{ op } 0);$
+EX Stage (Execution)R-R ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.B$$R-M ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.Imm$$Load / Store:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A + ID/EX.B$$$$EX/MEM.B \leftarrow ID/EX.B$$Branch:$$EX/MEM.ALUOut \leftarrow ID/EX.NPC + (ID/EX.Imm \ll 2)$$$$EX/MEM.cond \leftarrow (ID/EX.A == 0)$$
 
 ### MEM Stage:
-* Load instruction  : $PC \leftarrow NPC;$
-                    : $LMD \leftarrow Mem[ALUOut];$
-
-* Store instruction : $PC \leftarrow NPC;$
-                    : $Mem[ALUOut] \leftarrow B;$
-
-* Branch instruction: $\text{if } (cond) \text{ } PC \leftarrow ALUOut;$
-                    : $\text{else } PC \leftarrow NPC;$
-
-* Other instructions: $PC \leftarrow NPC;$
+MEM Stage (Memory Access)ALU Instructions:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.ALUOut \leftarrow EX/MEM.ALUOut$$Load Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.LMD \leftarrow Mem[EX/MEM.ALUOut]$$Store Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$Mem[EX/MEM.ALUOut] \leftarrow EX/MEM.B$$
 
 ### WB Stage:
-
-Reg-Reg ALU Instruction : $Reg[rd] \leftarrow ALUOut;$
-
-Reg-Imm ALU Instruction : $Reg[rt] \leftarrow ALUOut;$
-
-Load Instruction        : $Reg[rt] \leftarrow LMD;$
-
+WB Stage (Write Back)R-R ALU:$$Reg[MEM/WB.IR[rd]] \leftarrow MEM/WB.ALUOut$$R-M ALU:$$Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.ALUOut$$Load:$$Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.LMD$$
 
 ## Non-PipeLined Architechture
 
