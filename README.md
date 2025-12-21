@@ -31,13 +31,9 @@ Instructions classified into three groups.
 
 ### IF Stage:
 $$
-IF/ID.IR \leftarrow Mem[PC]
-$$
-
-$$
 IF/ID.NPC, PC \leftarrow
 \begin{cases}
-    EX/MEM.ALUOut & \text{if } ((EX/MEM.opcode == branch) \land EX/MEM.cond) \\
+    EX/MEM.ALUOut & \text{if } ((EX/MEM.opcode == branch) \ \&\& \ EX/MEM.cond) \\
     PC + 4 & \text{else}
 \end{cases}
 $$
