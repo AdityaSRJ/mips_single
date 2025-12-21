@@ -91,11 +91,53 @@ EX/MEM.cond \leftarrow (ID/EX.A == 0)
 $$
 
 ### MEM Stage:
-MEM Stage (Memory Access)ALU Instructions:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.ALUOut \leftarrow EX/MEM.ALUOut$$Load Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.LMD \leftarrow Mem[EX/MEM.ALUOut]$$Store Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$Mem[EX/MEM.ALUOut] \leftarrow EX/MEM.B$$
+**ALU Instructions:**
 
+$$
+MEM/WB.IR \leftarrow EX/MEM.IR
+$$
+
+$$
+MEM/WB.ALUOut \leftarrow EX/MEM.ALUOut
+$$
+
+**Load Instruction:**
+
+$$
+MEM/WB.IR \leftarrow EX/MEM.IR
+$$
+
+$$
+MEM/WB.LMD \leftarrow Mem[EX/MEM.ALUOut]
+$$
+
+**Store Instruction:**
+
+$$
+MEM/WB.IR \leftarrow EX/MEM.IR
+$$
+
+$$
+Mem[EX/MEM.ALUOut] \leftarrow EX/MEM.B
+$$
 ### WB Stage:
-WB Stage (Write Back)R-R ALU:$$Reg[MEM/WB.IR[rd]] \leftarrow MEM/WB.ALUOut$$R-M ALU:$$Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.ALUOut$$Load:$$Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.LMD$$
+**R-R ALU:**
 
+$$
+Reg[MEM/WB.IR[rd]] \leftarrow MEM/WB.ALUOut
+$$
+
+**R-M ALU:**
+
+$$
+Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.ALUOut
+$$
+
+**Load:**
+
+$$
+Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.LMD
+$$
 ## Non-PipeLined Architechture
 
 <img width="811" height="360" alt="Image" src="https://github.com/user-attachments/assets/c5223b97-0fb8-409e-82e1-c29cb66acd1c" />
