@@ -46,7 +46,7 @@ $$
 $$ID/EX.A \leftarrow Reg[IF/ID.IR[rs]]$$$$ID/EX.B \leftarrow Reg[IF/ID.IR[rt]]$$$$ID/EX.NPC \leftarrow IF/ID.NPC$$$$ID/EX.IR \leftarrow IF/ID.IR$$$$ID/EX.Imm \leftarrow \text{sign-extend}(IF/ID.IR_{15..0})$$
 
 ### EX Stage:
-EX Stage (Execution)R-R ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.B$$R-M ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.Imm$$Load / Store:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A + ID/EX.B$$$$EX/MEM.B \leftarrow ID/EX.B$$Branch:$$EX/MEM.ALUOut \leftarrow ID/EX.NPC + (ID/EX.Imm \ll 2)$$$$EX/MEM.cond \leftarrow (ID/EX.A == 0)$$
+R-R ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.B$$R-M ALU:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.Imm$$Load / Store:$$EX/MEM.IR \leftarrow ID/EX.IR$$$$EX/MEM.ALUOut \leftarrow ID/EX.A + ID/EX.B$$$$EX/MEM.B \leftarrow ID/EX.B$$Branch:$$EX/MEM.ALUOut \leftarrow ID/EX.NPC + (ID/EX.Imm \ll 2)$$$$EX/MEM.cond \leftarrow (ID/EX.A == 0)$$
 
 ### MEM Stage:
 MEM Stage (Memory Access)ALU Instructions:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.ALUOut \leftarrow EX/MEM.ALUOut$$Load Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$MEM/WB.LMD \leftarrow Mem[EX/MEM.ALUOut]$$Store Instruction:$$MEM/WB.IR \leftarrow EX/MEM.IR$$$$Mem[EX/MEM.ALUOut] \leftarrow EX/MEM.B$$
