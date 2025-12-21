@@ -176,7 +176,7 @@ Two methods can be employed to minimize performance loss:
 
 * **Data Forwarding:** By using additional hardware, the data required can be forwarded to the dependent instruction as soon as it is computed, rather than waiting for it to be written back to the register file.
   <img width="1614" height="398" alt="Image" src="https://github.com/user-attachments/assets/5516036b-8578-4b9c-a012-ee0b24dbdd83" />
-  - The first instruction computes r4, which is required by all the subsequent four instructions.
+  - The first instruction computes R4, which is required by all the subsequent four instructions.
   - The dependencies are depicted by red arrows (Result written in WB, operands read in ID).
   - The last instruction, OR, is not affected by data dependency.
 
@@ -203,7 +203,9 @@ Control hazards arise because of branch instructions being executed in the pipel
 
 * If the branch is taken, the PC is not normally updated until the end of the MEM stage.
 * Instruction can thus be fetched after **3 stall cycles.**
+  
 <img width="1594" height="521" alt="Image" src="https://github.com/user-attachments/assets/d8a75a56-c9b1-4039-a93d-af267a484e32" />
+
 * **Ideal CPI** = 1
 * **Branch Frequency** = 30%
 * **Stall Cycles** = 3
