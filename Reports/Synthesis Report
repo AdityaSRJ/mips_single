@@ -1,0 +1,808 @@
+
+*** Running vivado
+    with args -log pipe_MIPS32.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipe_MIPS32.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Sun Dec 21 13:31:33 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source pipe_MIPS32.tcl -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 514.586 ; gain = 199.633
+Command: read_checkpoint -auto_incremental -incremental C:/mips_single/mips_single.srcs/utils_1/imports/synth_1/pipe_MIPS32.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/mips_single/mips_single.srcs/utils_1/imports/synth_1/pipe_MIPS32.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top pipe_MIPS32 -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+[libprotobuf ERROR C:\protobuf-3.21.12\protobuf\src\google\protobuf\wire_format_lite.cc:618] String field 'HDMetricDBGroup.name' contains invalid UTF-8 data when parsing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Device 21-9227] Part: xc7k70tfbv676-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28832
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1368.074 ; gain = 448.887
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'pipe_MIPS32' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:1]
+INFO: [Synth 8-6157] synthesizing module 'combForwardingUnit' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/combinedFwdUnit.v:1]
+	Parameter RR_ALU bound to: 3'b000 
+	Parameter RM_ALU bound to: 3'b001 
+	Parameter LOAD bound to: 3'b010 
+	Parameter STORE bound to: 3'b011 
+	Parameter BRANCH bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'combForwardingUnit' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/combinedFwdUnit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux4to1' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'stallUnit' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/stallUnit.v:1]
+	Parameter RR_ALU bound to: 3'b000 
+	Parameter RM_ALU bound to: 3'b001 
+	Parameter LOAD bound to: 3'b010 
+	Parameter STORE bound to: 3'b011 
+	Parameter BRANCH bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'stallUnit' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/stallUnit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'earlyBranch' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/earlyBranch.v:1]
+	Parameter BEQZ bound to: 6'b001110 
+	Parameter BNEQZ bound to: 6'b001101 
+INFO: [Synth 8-6155] done synthesizing module 'earlyBranch' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/earlyBranch.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:270]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:319]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:336]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_MIPS32' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:1]
+WARNING: [Synth 8-6014] Unused sequential element ID_EX_NPC_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:235]
+WARNING: [Synth 8-6014] Unused sequential element EX_MEM_A_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:267]
+WARNING: [Synth 8-6014] Unused sequential element MEM_WB_A_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:318]
+WARNING: [Synth 8-7137] Register ID_EX_A_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:227]
+WARNING: [Synth 8-7137] Register ID_EX_B_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:231]
+WARNING: [Synth 8-7137] Register ID_EX_Imm_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:234]
+WARNING: [Synth 8-7137] Register ID_EX_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:236]
+WARNING: [Synth 8-7137] Register ID_EX_Branch_NPC_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:237]
+WARNING: [Synth 8-7137] Register EX_MEM_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:106]
+WARNING: [Synth 8-7137] Register EX_MEM_ALUOut_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:137]
+WARNING: [Synth 8-7137] Register EX_MEM_B_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:298]
+WARNING: [Synth 8-7137] Register MEM_WB_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:108]
+WARNING: [Synth 8-7137] Register MEM_WB_ALUOut_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:138]
+WARNING: [Synth 8-7137] Register MEM_WB_LMD_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:139]
+WARNING: [Synth 8-7137] Register DataMem_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'DataMem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "DataMem_reg" dissolved into registers
+WARNING: [Synth 8-7129] Port EX_MEM_IR[31] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[30] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[29] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[28] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[27] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[26] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[25] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[24] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[23] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[22] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[21] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[10] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[9] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[8] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[7] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[6] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[5] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[4] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[3] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[2] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[1] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[0] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[31] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[30] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[29] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[28] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[27] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[26] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[25] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[24] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[23] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[22] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[21] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[10] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[9] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[8] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[7] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[6] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[5] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[4] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[3] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[2] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[1] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[0] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[31] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[30] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[29] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[28] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[27] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[26] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[25] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[24] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[23] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[22] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[21] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[10] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[9] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[8] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[7] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[6] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[5] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[4] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[3] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[2] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[1] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[0] in module combForwardingUnit is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.535 . Memory (MB): peak = 1584.023 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/mips_single/mips_single.srcs/constrs_1/new/riugh.xdc]
+Finished Parsing XDC File [C:/mips_single/mips_single.srcs/constrs_1/new/riugh.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1712.961 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.491 . Memory (MB): peak = 1712.961 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:45 ; elapsed = 00:00:59 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1035  
+	                3 Bit    Registers := 3     
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 5     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 6     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 3     
+	   5 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_4/HALTED_reg__0/Q' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:02:01 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_0 : 0 0 : 3101 5879 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_0 : 0 1 : 2778 5879 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_3 : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_3 : 0 1 : 2659 5418 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|pipe_MIPS32 | Reg_reg    | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|pipe_MIPS32 | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:02:10 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:39 ; elapsed = 00:03:14 . Memory (MB): peak = 1755.211 ; gain = 836.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|pipe_MIPS32 | Reg_reg    | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:40 . Memory (MB): peak = 1814.801 ; gain = 895.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:10 ; elapsed = 00:03:49 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:10 ; elapsed = 00:03:49 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:13 ; elapsed = 00:03:53 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:13 ; elapsed = 00:03:53 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:14 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:14 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    44|
+|3     |LUT1     |    33|
+|4     |LUT2     |   100|
+|5     |LUT3     |    68|
+|6     |LUT4     |   154|
+|7     |LUT5     |   780|
+|8     |LUT6     |  9162|
+|9     |MUXF7    |  4352|
+|10    |MUXF8    |  2176|
+|11    |RAM32M   |    10|
+|12    |RAM32X1D |     4|
+|13    |FDCE     |    43|
+|14    |FDPE     |     6|
+|15    |FDRE     | 33488|
+|16    |IBUF     |     2|
+|17    |OBUF     |    64|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:15 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 3 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:51 ; elapsed = 00:03:44 . Memory (MB): peak = 1816.770 ; gain = 768.645
+Synthesis Optimization Complete : Time (s): cpu = 00:03:15 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.615 . Memory (MB): peak = 1816.770 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6586 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'pipe_MIPS32' is not ideal for floorplanning, since the cellview 'pipe_MIPS32' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+*** Running vivado
+    with args -log pipe_MIPS32.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source pipe_MIPS32.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Sun Dec 21 13:31:33 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source pipe_MIPS32.tcl -notrace
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 514.586 ; gain = 199.633
+Command: read_checkpoint -auto_incremental -incremental C:/mips_single/mips_single.srcs/utils_1/imports/synth_1/pipe_MIPS32.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/mips_single/mips_single.srcs/utils_1/imports/synth_1/pipe_MIPS32.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top pipe_MIPS32 -part xc7k70tfbv676-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7k70t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7k70t'
+[libprotobuf ERROR C:\protobuf-3.21.12\protobuf\src\google\protobuf\wire_format_lite.cc:618] String field 'HDMetricDBGroup.name' contains invalid UTF-8 data when parsing a protocol buffer. Use the 'bytes' type if you intend to send raw bytes. 
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+INFO: [Device 21-9227] Part: xc7k70tfbv676-1 does not have CEAM library.
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 28832
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 1368.074 ; gain = 448.887
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'pipe_MIPS32' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:1]
+INFO: [Synth 8-6157] synthesizing module 'combForwardingUnit' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/combinedFwdUnit.v:1]
+	Parameter RR_ALU bound to: 3'b000 
+	Parameter RM_ALU bound to: 3'b001 
+	Parameter LOAD bound to: 3'b010 
+	Parameter STORE bound to: 3'b011 
+	Parameter BRANCH bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'combForwardingUnit' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/combinedFwdUnit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux4to1' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:2]
+INFO: [Synth 8-226] default block is never used [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'mux4to1' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mux4to1.v:2]
+INFO: [Synth 8-6157] synthesizing module 'stallUnit' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/stallUnit.v:1]
+	Parameter RR_ALU bound to: 3'b000 
+	Parameter RM_ALU bound to: 3'b001 
+	Parameter LOAD bound to: 3'b010 
+	Parameter STORE bound to: 3'b011 
+	Parameter BRANCH bound to: 3'b100 
+INFO: [Synth 8-6155] done synthesizing module 'stallUnit' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/stallUnit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'earlyBranch' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/earlyBranch.v:1]
+	Parameter BEQZ bound to: 6'b001110 
+	Parameter BNEQZ bound to: 6'b001101 
+INFO: [Synth 8-6155] done synthesizing module 'earlyBranch' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/earlyBranch.v:1]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:270]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:319]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:336]
+INFO: [Synth 8-6155] done synthesizing module 'pipe_MIPS32' (0#1) [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:1]
+WARNING: [Synth 8-6014] Unused sequential element ID_EX_NPC_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:235]
+WARNING: [Synth 8-6014] Unused sequential element EX_MEM_A_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:267]
+WARNING: [Synth 8-6014] Unused sequential element MEM_WB_A_reg was removed.  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:318]
+WARNING: [Synth 8-7137] Register ID_EX_A_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:227]
+WARNING: [Synth 8-7137] Register ID_EX_B_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:231]
+WARNING: [Synth 8-7137] Register ID_EX_Imm_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:234]
+WARNING: [Synth 8-7137] Register ID_EX_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:236]
+WARNING: [Synth 8-7137] Register ID_EX_Branch_NPC_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:237]
+WARNING: [Synth 8-7137] Register EX_MEM_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:106]
+WARNING: [Synth 8-7137] Register EX_MEM_ALUOut_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:137]
+WARNING: [Synth 8-7137] Register EX_MEM_B_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:298]
+WARNING: [Synth 8-7137] Register MEM_WB_IR_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:108]
+WARNING: [Synth 8-7137] Register MEM_WB_ALUOut_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:138]
+WARNING: [Synth 8-7137] Register MEM_WB_LMD_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:139]
+WARNING: [Synth 8-7137] Register DataMem_reg in module pipe_MIPS32 has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code 
+WARNING: [Synth 8-4767] Trying to implement RAM 'DataMem_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
+Reason is one or more of the following :
+	1: RAM is sensitive to asynchronous reset signal. this RTL style is not supported. 
+RAM "DataMem_reg" dissolved into registers
+WARNING: [Synth 8-7129] Port EX_MEM_IR[31] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[30] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[29] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[28] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[27] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[26] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[25] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[24] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[23] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[22] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[21] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[10] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[9] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[8] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[7] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[6] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[5] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[4] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[3] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[2] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[1] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[0] in module stallUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[31] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[30] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[29] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[28] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[27] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[26] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[25] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[24] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[23] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[22] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[21] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[10] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[9] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[8] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[7] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[6] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[5] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[4] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[3] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[2] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[1] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port EX_MEM_IR[0] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[31] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[30] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[29] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[28] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[27] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[26] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[25] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[24] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[23] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[22] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[21] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[10] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[9] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[8] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[7] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[6] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[5] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[4] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[3] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[2] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[1] in module combForwardingUnit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MEM_WB_IR[0] in module combForwardingUnit is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:18 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 1584.023 ; gain = 664.836
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.535 . Memory (MB): peak = 1584.023 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/mips_single/mips_single.srcs/constrs_1/new/riugh.xdc]
+Finished Parsing XDC File [C:/mips_single/mips_single.srcs/constrs_1/new/riugh.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1712.961 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.491 . Memory (MB): peak = 1712.961 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:37 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:45 ; elapsed = 00:00:59 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   32 Bit       Adders := 2     
+	   2 Input   32 Bit       Adders := 3     
++---Registers : 
+	               32 Bit    Registers := 1035  
+	                3 Bit    Registers := 3     
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 5     
+	   2 Input   32 Bit        Muxes := 5     
+	   5 Input   32 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 6     
+	   4 Input    5 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 2     
+	   4 Input    2 Bit        Muxes := 2     
+	   2 Input    1 Bit        Muxes := 8     
+	   4 Input    1 Bit        Muxes := 3     
+	   5 Input    1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: Generating DSP EX_MEM_ALUOut0, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+DSP Report: operator EX_MEM_ALUOut0 is absorbed into DSP EX_MEM_ALUOut0.
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_4/HALTED_reg__0/Q' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/Aditya SR/OneDrive/Desktop/Collage/ModelSim/work/MIPS_Single/mips32_single.v:189]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:02:01 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_0 : 0 0 : 3101 5879 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_0 : 0 1 : 2778 5879 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_3 : 0 0 : 2759 5418 : Used 1 time 0
+ Sort Area is pipe_MIPS32__GB4 EX_MEM_ALUOut0_3 : 0 1 : 2659 5418 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|pipe_MIPS32 | Reg_reg    | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|pipe_MIPS32 | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|pipe_MIPS32 | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:02:10 . Memory (MB): peak = 1712.961 ; gain = 793.773
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:39 ; elapsed = 00:03:14 . Memory (MB): peak = 1755.211 ; gain = 836.023
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++------------+------------+-----------+----------------------+--------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives   | 
++------------+------------+-----------+----------------------+--------------+
+|pipe_MIPS32 | Reg_reg    | Implied   | 32 x 32              | RAM32M x 12  | 
++------------+------------+-----------+----------------------+--------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:02 ; elapsed = 00:03:40 . Memory (MB): peak = 1814.801 ; gain = 895.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:10 ; elapsed = 00:03:49 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:10 ; elapsed = 00:03:49 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:13 ; elapsed = 00:03:53 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:13 ; elapsed = 00:03:53 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:14 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:14 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY4   |    44|
+|3     |LUT1     |    33|
+|4     |LUT2     |   100|
+|5     |LUT3     |    68|
+|6     |LUT4     |   154|
+|7     |LUT5     |   780|
+|8     |LUT6     |  9162|
+|9     |MUXF7    |  4352|
+|10    |MUXF8    |  2176|
+|11    |RAM32M   |    10|
+|12    |RAM32X1D |     4|
+|13    |FDCE     |    43|
+|14    |FDPE     |     6|
+|15    |FDRE     | 33488|
+|16    |IBUF     |     2|
+|17    |OBUF     |    64|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:15 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 3 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:51 ; elapsed = 00:03:44 . Memory (MB): peak = 1816.770 ; gain = 768.645
+Synthesis Optimization Complete : Time (s): cpu = 00:03:15 ; elapsed = 00:03:54 . Memory (MB): peak = 1816.770 ; gain = 897.582
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.615 . Memory (MB): peak = 1816.770 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 6586 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'pipe_MIPS32' is not ideal for floorplanning, since the cellview 'pipe_MIPS32' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
+INFO: [Project 1-570] Preparing netlist for logic optimization
