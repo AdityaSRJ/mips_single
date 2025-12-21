@@ -235,3 +235,20 @@ This implementation further eliminates the remaining stall cycle by utilizing **
 * **Result:** Since the branch decision is resolved halfway through the cycle, the Program Counter (PC) can be updated in time for the next Instruction Fetch (IF) on the following positive edge.
 * **Impact:** This results in **Zero Stall Cycles** for branch instructions.
 
+
+## FPGA Implementation Results
+**Target Device:** Xilinx Kintex-7 (xc7k70t)  
+**Toolchain:** Vivado 2024.1
+
+| Metric | Result | Notes |
+| :--- | :--- | :--- |
+| **Max Frequency** | 106 MHz | Limited by Negedge Decode stage (Half-cycle critical path) |
+| **Slice LUTs** | ~10,000 | ~24% Utilization |
+| **Registers (FF)** | ~33,500 | High usage due to Distributed RAM implementation of Memory |
+| **Block RAM** | 0 | Memory inferred as Distributed RAM (Regs) |
+| **DSP Blocks** | 4 | Used for ALU Multiplication |
+
+### Design Trade-off Note
+This processor uses a **Negedge Decode** architecture.
+* **Pro:** Branch Misprediction Penalty is reduced to **0 cycles**.
+* **Con:** Critical path is effectively halved, limiting Max Frequency to ~106 MHz (equivalent to ~212 MHz logic depth in a standard pipeline).
