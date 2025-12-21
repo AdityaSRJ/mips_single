@@ -149,10 +149,12 @@ $$
 <img width="809" height="372" alt="Image" src="https://github.com/user-attachments/assets/40a61dfd-a2f9-4b35-8aef-1287714c4951" />
 
 
-## Issues To Be Addressed.
+## Structural Hazards
 
-* Structural Hazards : Conflict while Data Access and Instruction Fetch.
-* Data Hazards       : Only RAW Hazards are poosible in MIPS32.
+Structural hazards occur when the hardware cannot support all possible combinations of instructions simultaneously due to resource conflicts. In this implementation, the primary structural hazards are:
+
+* **IF - MEM Conflicts:** Both stages attempt to access memory simultaneously (Instruction Fetching in **IF** vs. Data Access in **MEM**).
+* **ID - WB Conflicts:** Both stages attempt to access the Register File simultaneously (Reading operands in **ID** vs. Writing results in **WB**).
 
 
 
