@@ -175,11 +175,11 @@ Data hazards occur due to data dependencies between instructions that are in var
 Two methods can be employed to minimize performance loss:
 
 * **Data Forwarding:** By using additional hardware, the data required can be forwarded to the dependent instruction as soon as it is computed, rather than waiting for it to be written back to the register file.
-<img width="1614" height="398" alt="Image" src="https://github.com/user-attachments/assets/5516036b-8578-4b9c-a012-ee0b24dbdd83" />
-    - The first instruction computes r4, which is required by all the subsequent four instructions.
-    - The dependencies are depicted by red arrows ( Result written in WB, operands read in ID. )
-    - The last instruction, OR, is not affected by data dependency.
-      
+  <img width="1614" height="398" alt="Image" src="https://github.com/user-attachments/assets/5516036b-8578-4b9c-a012-ee0b24dbdd83" />
+  - The first instruction computes r4, which is required by all the subsequent four instructions.
+  - The dependencies are depicted by red arrows (Result written in WB, operands read in ID).
+  - The last instruction, OR, is not affected by data dependency.
+
 * **Concurrent Register Access:** By splitting the clock cycle into two halves. Register read and write operations can be carried out in separate halves of a clock cycle (e.g., **write** in the first half and **read** in the second half).
 
 <img width="1632" height="726" alt="Image" src="https://github.com/user-attachments/assets/7d355c63-0f76-449b-9de9-c55878c85ed3" />
