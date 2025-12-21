@@ -1,0 +1,53 @@
+module simpleTest;
+
+reg clk,reset;
+
+integer k;
+
+pipe_MIPS32 mips(clk,reset);
+
+initial
+begin
+	clk = 0;
+	reset = 0;
+	
+	#12 reset = 1;
+	#10 reset = 0;
+	
+	
+end
+
+initial 
+forever			
+	begin
+		#5 clk = 1; 
+		#5 clk = 0;
+		
+	end
+
+initial
+begin
+	for(k = 0; k<32; k= k + 1)
+		mips.Reg[k] = k; 
+ 
+//				machine		assembly		check
+	mips.ProgMem[0] = 32'h00430800;	// ADD R1, R2, R3 	// R1 now has 5
+	mips.ProgMem[1] = 32'h04A62000; // SUB R4, R5, R6	// R4 now has -1
+	mips.ProgMem[2] = 32'h2907000A; // ADDI R7, R8, 10	// R7 now has 18	
+	mips.ProgMem[3] = 32'h2D49000A; // SUBI R9, R10, 10	// R9 now has 0
+	mips.ProgMem[4] = 32'h256C0000;	// STORE R12, 0(R11)    // 
+	mips.ProgMem[5] = 32'h216D0000; // LW R13, 0(R11)	// R13 now has 12
+
+	
+	#300;
+	for(k = 0; k <=31; k=k+1)
+		$display(" R%1d - %2d set", k , $signed(mips.Reg[k]));
+     
+	$display("DataMem%2d - %2d", 11, mips.DataMem[11]);   // should have value 12
+	
+	#50;
+	$stop;
+
+
+end
+endmodule
