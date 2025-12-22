@@ -65,7 +65,7 @@ EX/MEM.IR \leftarrow ID/EX.IR
 $$
 
 $$
-EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.Imm
+EX/MEM.ALUOut \leftarrow ID/EX.A\    \text{ func }\    ID/EX.Imm
 $$
 
 **Load / Store:**
@@ -163,7 +163,7 @@ Structural hazards occur when the hardware cannot support all possible combinati
 Data hazards occur due to data dependencies between instructions that are in various stages of execution in the pipeline. 
 ### ALU-ALU Data Dependency
 
-<img width="1390" height="362" alt="Image" src="https://github.com/user-attachments/assets/eebd3fb8-9ee1-4524-818e-fc55b170c31c" />
+<img width="1569" height="391" alt="Image" src="https://github.com/user-attachments/assets/824b4054-a6b4-4212-b5fa-2be3510a5017" />
 
 * A **naive solution** to ALU-ALU data dependency is inserting stall cycles. After the instruction is decoded and the control unit determines that there is a data dependency, it can insert stall cycles and re-execute the ID stage again.
 * **3 clock cycles are wasted**.
