@@ -7,7 +7,7 @@ MIPS32 is a **Reduced Instruction Set Architechture (RISC)** which can operate o
 
 ### MIPS32 Registers:
 
-* 32, 32bit general purpose registers : *R0 to R1*.
+* 32, 32bit general purpose registers : *R0 to R31*.
 * A special purpose register : 32 bit Program Counter pointing to the next instruction to be fetched.
 
 
@@ -30,7 +30,7 @@ Instructions classified into three groups.
  * WB : Register Write Back
 
 ### IF Stage:
-### IF Stage:
+
 
 $$
 IF/ID.IR \leftarrow Mem[PC]
@@ -55,7 +55,7 @@ EX/MEM.IR \leftarrow ID/EX.IR
 $$
 
 $$
-EX/MEM.ALUOut \leftarrow ID/EX.A \text{ func } ID/EX.B
+EX/MEM.ALUOut \leftarrow ID/EX.A \   \text{ func }\    ID/EX.B
 $$
 
 **R-M ALU:**
