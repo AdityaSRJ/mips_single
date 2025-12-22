@@ -7,7 +7,7 @@ MIPS32 is a **Reduced Instruction Set Architechture (RISC)** which can operate o
 
 ### MIPS32 Registers:
 
-* 32, 32 general purpose registers : *R0 to R1*.
+* 32, 32bit general purpose registers : *R0 to R1*.
 * A special purpose register : 32 bit Program Counter pointing to the next instruction to be fetched.
 
 
