@@ -1,7 +1,7 @@
 
-# PipeLined Implementation of MIPS32 Processor
+# Pipelined Implementation of MIPS32 Processor
 
-MIPS32 is a **Reduced Instruction Set Architechture (RISC)** which can operate on 32 bits of data at a time.
+MIPS32 is a **Reduced Instruction Set Architecture (RISC)** which can operate on 32 bits of data at a time.
 
 ## Salient Features
 
@@ -140,11 +140,11 @@ $$
 $$
 Reg[MEM/WB.IR[rt]] \leftarrow MEM/WB.LMD
 $$
-## Non-PipeLined Architechture
+## Non-Pipelined Architecture
 
 <img width="811" height="360" alt="Image" src="https://github.com/user-attachments/assets/c5223b97-0fb8-409e-82e1-c29cb66acd1c" />
 
-## PipeLined Architechture
+## Pipelined Architecture
 
 <img width="809" height="372" alt="Image" src="https://github.com/user-attachments/assets/40a61dfd-a2f9-4b35-8aef-1287714c4951" />
 
@@ -182,7 +182,7 @@ Two methods can be employed to minimize performance loss:
 
 * **Concurrent Register Access:** By splitting the clock cycle into two halves. Register read and write operations can be carried out in separate halves of a clock cycle (e.g., **write** in the first half and **read** in the second half).
 
-<img width="1632" height="726" alt="Image" src="https://github.com/user-attachments/assets/7d355c63-0f76-449b-9de9-c55878c85ed3" />
+<img width="1673" height="723" alt="Image" src="https://github.com/user-attachments/assets/e0744a5a-2a6b-4200-8b8b-ba6aacbfcb0d" />
 
 ### Data Hazard while Accessing Memory. 
 A load instruction followed by the use of the loaded data is an example of a data hazard that requires unavoidable pipeline stalls. 
@@ -192,7 +192,7 @@ A load instruction followed by the use of the loaded data is an example of a dat
 
 #### Solution ?
 * The hazard cannot be eliminated by forwarding alone.
-* Common solution is to use a hardware addition called **pipeline interlock. **
+* Common solution is to use a hardware addition called **pipeline interlock**. 
 * Another software solution is **Instruction Scheduling**, where the compiler tries to avoid generating code with a load followed by an immediate use. 
 
 ## Control Hazard.
